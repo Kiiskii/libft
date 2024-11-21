@@ -12,6 +12,11 @@ A custom C library developed for the Hive Helsinki **Libft** project, providing 
 
 Clone the repository and compile using the included Makefile.
 
+## Improvement points
+
+There are some functions I might clean up a bit, I don't really like the logic I used.
+I want to make sure that I handle my write return values properly incase of errors.
+
 ```bash
 git clone https://github.com/Kiiskii/libft.git
 cd libft
