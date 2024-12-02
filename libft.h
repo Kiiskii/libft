@@ -6,12 +6,16 @@
 /*   By: akiiski <akiiski@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:21:39 by akiiski           #+#    #+#             */
-/*   Updated: 2024/11/20 10:51:39 by akiiski          ###   ########.fr       */
+/*   Updated: 2024/12/02 15:22:18 by akiiski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 6
+# endif
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -87,5 +91,17 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// Get_next_line functions
+
+char	*get_next_line(int fd);
+size_t	gnl_strlen(const char *str);
+void	*gnl_memcpy(void *dest, const void *src, size_t n);
+char	*gnl_strjoin(char *s1, char *s2);
+char	*gnl_strdup(char *s);
+char	*gnl_strchr(const char *s, int c);
+void	gnl_memmove(void *dest, void *src, size_t n);
+char	*find_next_line(char *buffer, char *stash, ssize_t bytes_read, int fd);
+char	*trim_next_line(char *buffer, char *stash);
 
 #endif

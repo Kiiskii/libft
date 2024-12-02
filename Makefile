@@ -6,7 +6,7 @@
 #    By: akiiski <akiiski@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 14:07:36 by akiiski           #+#    #+#              #
-#    Updated: 2024/11/20 13:42:05 by akiiski          ###   ########.fr        #
+#    Updated: 2024/12/02 15:23:53 by akiiski          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ SRCS = 	ascii/ft_isalpha.c ascii/ft_isascii.c ascii/ft_isdigit.c \
 		print/ft_hexnbr.c print/ft_putnbr_fd.c \
 		list/ft_lstnew.c list/ft_lstadd_front.c list/ft_lstsize.c \
 		list/ft_lstlast.c list/ft_lstadd_back.c list/ft_lstdelone.c \
-		list/ft_lstclear.c list/ft_lstiter.c list/ft_lstmap.c
+		list/ft_lstclear.c list/ft_lstiter.c list/ft_lstmap.c \
+		gnl/get_next_line.c gnl/get_next_line_utils.c
 
 NAME = libft.a
 
