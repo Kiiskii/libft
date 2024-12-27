@@ -6,7 +6,7 @@
 #    By: akiiski <akiiski@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 14:07:36 by akiiski           #+#    #+#              #
-#    Updated: 2024/12/02 15:23:53 by akiiski          ###   ########.fr        #
+#    Updated: 2024/12/27 13:32:07 by akiiski          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ BONUSSRCS =
 
 SRCS = 	ascii/ft_isalpha.c ascii/ft_isascii.c ascii/ft_isdigit.c \
 		ascii/ft_isprint.c ascii/ft_tolower.c ascii/ft_toupper.c \
-		ascii/ft_isalnum.c \
+		ascii/ft_isalnum.c ascii/ft_iswhitespace.c \
 		string/ft_strlen.c string/ft_strlcpy.c string/ft_strlcat.c \
 		string/ft_strchr.c string/ft_strrchr.c string/ft_strncmp.c \
 		string/ft_strnstr.c string/ft_strdup.c string/ft_substr.c \
