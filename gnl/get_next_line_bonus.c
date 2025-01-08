@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akiiski <akiiski@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 12:04:13 by akiiski           #+#    #+#             */
-/*   Updated: 2024/11/27 14:27:21 by akiiski          ###   ########.fr       */
+/*   Updated: 2024/12/02 10:41:21 by akiiski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line_bonus.h"
 
 char	*gnl_strjoin(char *s1, char *s2)
 {
@@ -97,15 +97,27 @@ char	*get_next_line(int fd)
 {
 	char		*stash;
 	char		*next_line;
-	static char	buffer[BUFFER_SIZE + 1];
+	static char	*buffer[1024];
 
 	if (fd < 0 || fd > 1024)
 		return (NULL);
+	if (buffer[fd] == NULL)
+	{
+		buffer[fd] = malloc(BUFFER_SIZE + 1);
+		if (buffer[fd] == NULL)
+			return (NULL);
+		buffer[fd][0] = '\0';
+	}
 	stash = malloc(1);
 	if (stash == NULL)
 		return (NULL);
 	stash[0] = '\0';
-	stash = gnl_strjoin(stash, buffer);
-	next_line = find_next_line(buffer, stash, 1, fd);
+	stash = gnl_strjoin(stash, buffer[fd]);
+	next_line = find_next_line(buffer[fd], stash, 1, fd);
+	if (next_line == NULL)
+	{
+		free(buffer[fd]);
+		buffer[fd] = NULL;
+	}
 	return (next_line);
 }

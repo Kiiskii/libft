@@ -6,6 +6,7 @@
 #include <limits.h>
 
 int	testsprintf(void);
+int	testsgnl(void);
 
 #if MYASSERT
 void assert(bool condition)
@@ -239,6 +240,7 @@ int	main(void)
 	printf("\n\033[0;32mALL LIBFT TESTS PASSED!\033[0m\n");
 
 	testsprintf();
+	//testsgnl();
 
 	return (0);
 }

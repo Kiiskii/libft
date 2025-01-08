@@ -54,6 +54,6 @@ fclean: clean
 re:	fclean all
 
 tests: CFLAGS += -g -fsanitize=address -fsanitize=leak -fsanitize=undefined
-tests: libfttests.c printftests.c $(NAME)
+tests: libfttests.c printftests.c gnltests.c $(NAME)
 	cc -o $@ $(CFLAGS) $^ -lbsd
 	./$@
