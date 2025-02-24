@@ -14,7 +14,7 @@
 
 static void	puthex(uintptr_t n, int fd)
 {
-	if (n >= 0 && n <= 9)
+	if (n <= 9)
 		ft_putchar_fd(n + '0', fd);
 	else if (n >= 10 && n <= 15)
 		ft_putchar_fd((n + 87), fd);
